@@ -2,11 +2,11 @@ name: Test Fibbot
 on: [push, pull_request]
 jobs:
   run-fibbot:
-  run-on: ubuntu-latest
+  runs-on: ubuntu-latest
   steps:
-    -name: Checkout code
+    - name: Checkout code
     uses: actions/checkout@v2
-    -name: Set up Rust
+    - name: Set up Rust
     uses: dtolnay/rust-toolchain@stable
-    -name: Build and run
+    - name: Build and run
     run: cargo run
