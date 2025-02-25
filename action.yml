@@ -1,0 +1,15 @@
+name: 'Fibbot'
+description: 'A GitHub action that calculates the Fibonacii of numbers based on PR and post comment on result'
+inputs: 
+  enable_fibb:
+    description: 'Enable Fibonacci calculation (true / false)'
+    required: 'false'
+    default: 'true'
+  max_threshold:
+    description: ' Maximum number for Fibonacci calculation'
+    required: 'false'
+    default: '100'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  
