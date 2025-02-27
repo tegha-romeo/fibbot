@@ -1,0 +1,11 @@
+/home/dzeco/Documents/Projects/rust-projects/fibbot/target/debug/deps/libpowerfmt-36d2dab003d1b8fb.rmeta: /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/lib.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/buf.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/ext.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/smart_display.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/smart_display_impls.rs
+
+/home/dzeco/Documents/Projects/rust-projects/fibbot/target/debug/deps/libpowerfmt-36d2dab003d1b8fb.rlib: /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/lib.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/buf.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/ext.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/smart_display.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/smart_display_impls.rs
+
+/home/dzeco/Documents/Projects/rust-projects/fibbot/target/debug/deps/powerfmt-36d2dab003d1b8fb.d: /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/lib.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/buf.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/ext.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/smart_display.rs /home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/smart_display_impls.rs
+
+/home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/lib.rs:
+/home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/buf.rs:
+/home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/ext.rs:
+/home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/smart_display.rs:
+/home/dzeco/.cargo/registry/src/index.crates.io-6f17d22bba15001f/powerfmt-0.2.0/src/smart_display_impls.rs:

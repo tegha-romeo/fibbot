@@ -1,9 +1,23 @@
-inputs: 
-  enable_fibb:
-    description: 'Enable Fibonacci calculation (true / false)'
-    required: 'false'
+# inputs: 
+#   enable_fibb:
+#     description: 'Enable Fibonacci calculation (true / false)'
+#     required: 'false'
+#     default: 'true'
+#   max_threshold:
+#     description: ' Maximum number for Fibonacci calculation'
+#     required: 'false'
+#     default: '100'
+
+inputs:
+  enable_fib:
+    description: 'Enable Fibonacci Calculation'
+    required: false
     default: 'true'
   max_threshold:
-    description: ' Maximum number for Fibonacci calculation'
-    required: 'false'
+    description: 'Max threshold for Fibonacci numbers'
+    required: false
     default: '100'
+environment:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_REPOSITORY: ${{ github.repository }}
+  GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
