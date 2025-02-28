@@ -1,16 +1,6 @@
-# inputs: 
-#   enable_fibb:
-#     description: 'Enable Fibonacci calculation (true / false)'
-#     required: 'false'
-#     default: 'true'
-#   max_threshold:
-#     description: ' Maximum number for Fibonacci calculation'
-#     required: 'false'
-#     default: '100'
-
 name: "FibBot"
 description: "A GitHub Action that scans PRs for numbers, computes their Fibonacci values, and comments on the PR."
-author: "tegha-romeo"
+author: "Your Name or GitHub Username"
 
 inputs:
   enable_fib:
@@ -24,9 +14,7 @@ inputs:
 
 runs:
   using: "docker"
-  image: "Dockerfile"
-  env:
-    GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+  image: "Dockerfile"  
 
 branding:
   icon: "zap"

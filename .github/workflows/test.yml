@@ -5,29 +5,13 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-<<<<<<< HEAD
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Rust
-        uses: dtolnay/rust-toolchain@stable  # Ensures Rust is installed
-
-      - name: Build the Rust project
-        run: cargo build --release
-
       - name: Run FibBot Action
-        run: ./target/release/fibbot
+        uses: ./
+        with:
+          enable_fib: "true"
+          max_threshold: "100"
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # Ensure correct secret name
-=======
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Rust
-        uses: dtolnay/rust-toolchain@stable
-      - name: Build and run
-        run: cargo run
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
->>>>>>> 8830775d4ca946686ea4a316779f6237cc4c60a0
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
