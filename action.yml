@@ -14,13 +14,7 @@ inputs:
 
 runs:
   using: "docker"
-<<<<<<< HEAD
   image: "Dockerfile"  
-=======
-  image: "Dockerfile"
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
->>>>>>> 685236761059b3de6248d4be0fd7ea27aaa1eaa5
 
 branding:
   icon: "zap"
