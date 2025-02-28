@@ -1,17 +1,20 @@
-name: Test Fibbot
+name: Test FibBot
 on: [push, pull_request]
+
 jobs:
-  run-fibbot:
+  run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Rust
-        uses: dtolnay/rust-toolchain@stable
-      - name: Build and run
-        run: cargo run
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-        environment:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  GITHUB_REPOSITORY: ${{ github.repository }}
-  GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable  # Ensures Rust is installed
+
+      - name: Build the Rust project
+        run: cargo build --release
+
+      - name: Run FibBot Action
+        run: ./target/release/fibbot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # Ensure correct secret name

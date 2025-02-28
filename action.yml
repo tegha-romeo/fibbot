@@ -8,16 +8,26 @@
 #     required: 'false'
 #     default: '100'
 
+name: "FibBot"
+description: "A GitHub Action that scans PRs for numbers, computes their Fibonacci values, and comments on the PR."
+author: "tegha-romeo"
+
 inputs:
   enable_fib:
-    description: 'Enable Fibonacci Calculation'
+    description: "Enable Fibonacci calculation (true/false)"
     required: false
-    default: 'true'
+    default: "true"
   max_threshold:
-    description: 'Max threshold for Fibonacci numbers'
+    description: "Maximum number allowed for Fibonacci calculation"
     required: false
-    default: '100'
-environment:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  GITHUB_REPOSITORY: ${{ github.repository }}
-  GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
+    default: "100"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  env:
+    GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+branding:
+  icon: "zap"
+  color: "blue"
