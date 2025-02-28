@@ -11,4 +11,4 @@ jobs:
       - name: Run FibBot Action
         uses: ./
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # Use the new secret name
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}  # Use the new secret name
