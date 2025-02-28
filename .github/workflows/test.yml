@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-<<<<<<< HEAD
+
 
       - name: Run FibBot Action
         uses: ./
@@ -16,10 +16,10 @@ jobs:
           max_threshold: "100"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-=======
+
       
       - name: Run FibBot Action
         uses: ./
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}  # Use the new secret name
->>>>>>> 685236761059b3de6248d4be0fd7ea27aaa1eaa5
+
