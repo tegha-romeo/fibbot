@@ -3,12 +3,12 @@ use regex::Regex;
 use octocrab::Octocrab;
 
 
-fn extract_numbers(text: &str) -> Vec<u32> {
-    let re = Regex::new(r"\b\d+\b").unwrap();
-    re.find_iter(text)
-    .filter_map(|digits| digits.as_str().parse::<u32>().ok())
-    .collect()
-}
+// fn extract_numbers(text: &str) -> Vec<u32> {
+//     let re = Regex::new(r"\b\d+\b").unwrap();
+//     re.find_iter(text)
+//     .filter_map(|digits| digits.as_str().parse::<u32>().ok())
+//     .collect()
+// }
   
 
 
