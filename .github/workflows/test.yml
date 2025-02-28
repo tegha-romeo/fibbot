@@ -13,5 +13,4 @@ jobs:
         with:
           enable_fib: "true"
           max_threshold: "100"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PATTH}}  
+        

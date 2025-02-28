@@ -14,7 +14,9 @@ inputs:
 
 runs:
   using: "docker"
-  image: "Dockerfile"  
+  image: "Dockerfile"
+  env:
+    GITHUB_TOKEN: ${{ secrets.GH_PATTH }}
 
 branding:
   icon: "zap"
