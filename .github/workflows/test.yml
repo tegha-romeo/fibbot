@@ -7,10 +7,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
+      
       - name: Run FibBot Action
         uses: ./
         with:
-          enable_fib: "true"
-          max_threshold: "100"
-        
+          github_token: ${{ secrets.GH_PAT }}  

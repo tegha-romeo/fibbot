@@ -1,23 +1,12 @@
 name: "FibBot"
-description: "A GitHub Action that scans PRs for numbers, computes their Fibonacci values, and comments on the PR."
-author: "Your Name or GitHub Username"
-
+description: "A GitHub Action that calculates Fibonacci numbers"
 inputs:
-  enable_fib:
-    description: "Enable Fibonacci calculation (true/false)"
-    required: false
-    default: "true"
-  max_threshold:
-    description: "Maximum number allowed for Fibonacci calculation"
-    required: false
-    default: "100"
+  github_token:
+    description: "GitHub Token for authentication"
+    required: true
 
 runs:
   using: "docker"
   image: "Dockerfile"
   env:
-    GITHUB_TOKEN: ${{ secrets.GH_PATTH }}
-
-branding:
-  icon: "zap"
-  color: "blue"
+    GITHUB_TOKEN: ${{ inputs.github_token }}
