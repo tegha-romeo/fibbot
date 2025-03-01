@@ -29,3 +29,5 @@ jobs:
         run: |
           cargo build --release
           ./target/release/fibbot
+          env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
