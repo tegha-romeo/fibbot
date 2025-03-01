@@ -30,11 +30,13 @@ use octocrab::Octocrab;
 #[tokio::main]
 async fn main() {
     // Fetch the GitHub token from environment variables
+    let repo = env::var("GITHUB_REPOSITORY").expect("GITHUB_REPOSITORY not set");
+
     let github_token = env::var("GITHUB_TOKEN").expect("Missing GITHUB_TOKEN");
 
     // Fetch repository owner and name dynamically (replace as needed)
     let owner = "tegha-romeo"; 
-    let repo = "fibbot"; 
+    // let repo = "fibbot"; 
 
     // Simulated pull request number (this should be dynamically determined)
     let pr_number = 1; // Replace with a real PR number when testing
