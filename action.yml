@@ -1,12 +1,18 @@
-name: "FibBot"
-description: "A GitHub Action that calculates Fibonacci numbers"
+name: fibbot action
+description: A GitHub Action that extracts numbers from PRs and posts Fibonacci results.
+author: "tegha-romeo"
+
 inputs:
   github_token:
     description: "GitHub Token for authentication"
     required: true
+  pr_number:
+    description: "Pull Request number"
+    required: true
 
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: docker
+  image: Dockerfile
   env:
     GITHUB_TOKEN: ${{ inputs.github_token }}
+    PR_NUMBER: ${{ inputs.pr_number }}

@@ -1,14 +1,25 @@
-name: Test FibBot
-on: [push, pull_request]
+name: fibbot
+
+on:
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
-  run:
+  fibbot:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Run FibBot Action
-        uses: ./
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
         with:
-          github_token: ${{ secrets.GH_PAT }}  
+          toolchain: stable
+
+      - name: Build and Run FibBot
+        run: |
+          cargo build --release
+          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+          GITHUB_REPOSITORY=${{ github.repository }} \
+          PR_NUMBER=${{ github.event.pull_request.number }} \
+          ./target/release/fibbot
