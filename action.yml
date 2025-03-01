@@ -14,5 +14,5 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    GITHUB_TOKEN: ${{ inputs.github_token }}
+    GITHUB_TOKEN: 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
     PR_NUMBER: ${{ inputs.pr_number }}

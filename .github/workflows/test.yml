@@ -1,8 +1,13 @@
-name: fibbot
+name: FibBot PR Commenter
 
 on:
   pull_request:
     types: [opened, synchronize]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
   fibbot:
@@ -17,9 +22,10 @@ jobs:
           toolchain: stable
 
       - name: Build and Run FibBot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           cargo build --release
-          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-          GITHUB_REPOSITORY=${{ github.repository }} \
-          PR_NUMBER=${{ github.event.pull_request.number }} \
           ./target/release/fibbot
