@@ -1,33 +1,36 @@
-name: FibBot PR Commenter
+name: fibbot
 
 on:
   pull_request:
-    types: [opened, synchronize]
-
+    types: [opened, edited]
 permissions:
-  contents: read
-  issues: write
   pull-requests: write
+  contents: write
 
 jobs:
-  fibbot:
+  run-fibbot:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Set up Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          toolchain: stable
-
-      - name: Build and Run FibBot
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PATH }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+      - name: Debug Environment Variables
         run: |
-          cargo build --release
-          ./target/release/fibbot
-          env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          echo "PR_NUMBER: ${{ github.event.pull_request.number }}"
+          echo "ENABLE_FIBONACCI: ${{ inputs.enable_fib }}"
+          echo "THRESHOLD: ${{ inputs.threshold }}"
+          echo "GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}"
+          echo "GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}"
+
+      - name: Run Fibonacci Action
+        uses: ./
+        with:
+          enable_fib: 'true'  
+          threshold: '10'      
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          ENABLE_FIBONACCI: ${{ inputs.enable_fib }}
+          THRESHOLD: ${{ inputs.threshold }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}

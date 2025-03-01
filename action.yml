@@ -1,18 +1,14 @@
-name: fibbot action
-description: A GitHub Action that extracts numbers from PRs and posts Fibonacci results.
-author: "tegha-romeo"
-
+name: 'fibbot'
+description: 'Scans PR content for numbers and calculates their Fibonacci numbers.'
 inputs:
-  github_token:
-    description: "GitHub Token for authentication"
+  enable_fib:
+    description: 'Enable Fibonacci calculation'
     required: true
-  pr_number:
-    description: "Pull Request number"
+    default: 'false'
+  threshold:
+    description: 'Threshold limit for Fibonacci calculation'
     required: true
-
+    default: '100'
 runs:
-  using: docker
-  image: Dockerfile
-  env:
-    GITHUB_TOKEN: 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
-    PR_NUMBER: ${{ inputs.pr_number }}
+  using: 'docker'
+  image: 'Dockerfile'
