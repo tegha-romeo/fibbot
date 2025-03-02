@@ -1,24 +1,21 @@
-use fib::fibonacci;
-use octocrab::Octocrab;
-use std::env;
 use extract::extract_numbers;
+use fib::fibonacci;
 use get_pull_request::get_pr;
+use octocrab::Octocrab;
 use post::post_comment;
+use std::env;
 
-mod get_pull_request;
 mod extract;
 mod fib;
+mod get_pull_request;
 mod post;
-
-
 
 #[tokio::main]
 async fn main() {
-    
     let pr_number: u64 = env::var("PR_NUMBER")
-    .expect("PR_NUMBER not set")
-    .parse::<u64>()
-    .expect("Invalid PR_NUMBER");
+        .expect("PR_NUMBER not set")
+        .parse::<u64>()
+        .expect("Invalid PR_NUMBER");
 
     // Simulated pull request content (Replace this with actual PR content fetching logic)
     let pr_content = get_pr(pr_number).await;
@@ -32,8 +29,7 @@ async fn main() {
         let fib = fibonacci(num);
         response.push_str(&format!("- Fibonacci({}) = {}\n", num, fib));
     }
-        if let Err(e) = post_comment(&response).await {
-            eprintln!("Error posting comment: {}", e);
-        }
-
+    if let Err(e) = post_comment(&response).await {
+        eprintln!("Error posting comment: {}", e);
+    }
 }
