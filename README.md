@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # A  Fibbot Project To Calculate Fibonacci
 - Fibbot is a GitHub action that scans pull request and calculates their Fibonacci.
 
@@ -32,3 +33,6 @@ e.g ( .github/workflows/tes.yml )
 . To run it using docker you use the following commands:
 1. docker build -t fibbot . : to build the image
 2. docker run -it fibbot : to run the container
+=======
+with 2 and 4
+>>>>>>> 82a2606034ffb82176028e376d318355c4423d99
